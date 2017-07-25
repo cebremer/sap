@@ -1,0 +1,235 @@
+<?xml version="1.0"?>
+<launch>
+    <include file="$(find active_perception_evaluation)/launch/spawn_race_furniture.launch" />
+
+    <!-- TABLE 2 -->
+    <!-- SPAWN BOWL 1 -->
+    <include file="$(find active_perception_evaluation)/launch/spawn_object_at_xyz.launch">
+        <arg name="model" value="race_bowl"/>
+        <arg name="model_name" value="bowl_321"/>
+        <arg name="x" value="-2.029997" />
+        <arg name="y" value="1.09" />
+        <arg name="z" value="0.77" />
+        <arg name="roll" value="0"/>
+        <arg name="pitch" value="0"/>
+        <arg name="yaw" value="0"/>
+    </include>
+
+    <!-- SPAWN FORK 1 -->
+    <include file="$(find active_perception_evaluation)/launch/spawn_object_at_xyz.launch">
+        <arg name="model" value="race_fork1"/>
+        <arg name="model_name" value="fork_321"/>
+        <arg name="x" value="-2.180000"/>
+        <arg name="y" value="1.09"/>
+        <arg name="z" value="0.77"/>
+        <arg name="roll" value="0"/>
+        <arg name="pitch" value="0"/>
+        <arg name="yaw" value="-4.71"/>
+    </include>
+
+    <!-- SPAWN KNIFE 1 -->
+    <include file="$(find active_perception_evaluation)/launch/spawn_object_at_xyz.launch">
+        <arg name="model" value="race_knife1"/>
+        <arg name="model_name" value="knife_321"/>
+        <arg name="x" value="-1.880000"/>
+        <arg name="y" value="1.090000"/>
+        <arg name="z" value="0.77"/>
+        <arg name="roll" value="0"/>
+        <arg name="pitch" value="0"/>
+        <arg name="yaw" value="-4.71"/>
+    </include>
+    
+    <!-- SPAWN BOWL 2 -->
+    <include file="$(find active_perception_evaluation)/launch/spawn_object_at_xyz.launch">
+        <arg name="model" value="race_bowl"/>
+        <arg name="model_name" value="bowl_322"/>
+        <arg name="x" value="-2.029997" />
+        <arg name="y" value="1.52" />
+        <arg name="z" value="0.77" />
+        <arg name="roll" value="0"/>
+        <arg name="pitch" value="0"/>
+        <arg name="yaw" value="0"/>
+    </include>
+    
+    <!-- SPAWN FORK 2 -->
+    <include file="$(find active_perception_evaluation)/launch/spawn_object_at_xyz.launch">
+        <arg name="model" value="race_fork1"/>
+        <arg name="model_name" value="fork_322"/>
+        <arg name="x" value="-1.88"/>
+        <arg name="y" value="1.52"/>
+        <arg name="z" value="0.77"/>
+        <arg name="roll" value="0"/>
+        <arg name="pitch" value="0"/>
+        <arg name="yaw" value="-1.53"/>
+    </include>
+
+    <!-- SPAWN KNIFE 2 -->
+    <include file="$(find active_perception_evaluation)/launch/spawn_object_at_xyz.launch">
+        <arg name="model" value="race_knife1"/>
+        <arg name="model_name" value="knife_322"/>
+        <arg name="x" value="-2.18"/>
+        <arg name="y" value="1.52"/>
+        <arg name="z" value="0.77"/>
+        <arg name="roll" value="0"/>
+        <arg name="pitch" value="0"/>
+        <arg name="yaw" value="-1.53"/>
+    </include>
+
+    <!-- SPAWN MUG 1 -->
+    <include file="$(find active_perception_evaluation)/launch/spawn_object_at_xyz.launch">
+        <arg name="urdf" value="true"/>
+        <arg name="model" value="coffee_cup_model"/>
+        <arg name="model_name" value="mug_321"/>
+        <arg name="x" value="-1.86"/>
+        <arg name="y" value="1.26"/>
+        <arg name="z" value="0.75"/>
+        <arg name="roll" value="0"/>
+        <arg name="pitch" value="0"/>
+        <arg name="yaw" value="0"/>
+    </include>
+    
+    <!-- SPAWN MUG 2 -->
+    <include file="$(find active_perception_evaluation)/launch/spawn_object_at_xyz.launch">
+        <arg name="urdf" value="true"/>
+        <arg name="model" value="coffee_cup_model"/>
+        <arg name="model_name" value="mug_322"/>
+        <arg name="x" value="-2.25"/>
+        <arg name="y" value="1.5"/>
+        <arg name="z" value="0.75"/>
+        <arg name="roll" value="0"/>
+        <arg name="pitch" value="0"/>
+        <arg name="yaw" value="0"/>
+    </include>
+    
+    <!-- SPAWN MENU CARD -->
+    <include file="$(find active_perception_evaluation)/launch/spawn_object_at_xyz.launch">
+        <arg name="model" value="race_menucard"/>
+        <arg name="model_name" value="menucard_321"/>
+        <arg name="x" value="-2.05"/>
+        <arg name="y" value="1.35"/>
+        <arg name="z" value="0.85"/>
+        <arg name="roll" value="0"/>
+        <arg name="pitch" value="4.71"/>
+        <arg name="yaw" value="0"/>
+    </include>
+    
+    <!-- DECORATE TABLE 1 -->
+    <include file="$(find active_perception_evaluation)/launch/spawn_object_at_xyz.launch">
+        <arg name="model" value="race_menucard"/>
+        <arg name="model_name" value="menucard_t11"/>
+        <arg name="x" value="-4.15"/>
+        <arg name="y" value="1.3"/>
+        <arg name="z" value="0.87"/>
+        <arg name="roll" value="0"/>
+        <arg name="pitch" value="4.71"/>
+        <arg name="yaw" value="0"/>
+    </include>
+    <include file="$(find active_perception_evaluation)/launch/spawn_object_at_xyz.launch">
+        <arg name="model" value="race_menucard"/>
+        <arg name="model_name" value="menucard_t12"/>
+        <arg name="x" value="-4.6"/>
+        <arg name="y" value="1.3"/>
+        <arg name="z" value="0.87"/>
+        <arg name="roll" value="0"/>
+        <arg name="pitch" value="4.71"/>
+        <arg name="yaw" value="0"/>
+    </include>
+    <include file="$(find active_perception_evaluation)/launch/spawn_object_at_xyz.launch">
+        <arg name="model" value="race_menucard"/>
+        <arg name="model_name" value="menucard_t13"/>
+        <arg name="x" value="-4.55"/>
+        <arg name="y" value="1.29"/>
+        <arg name="z" value="0.87"/>
+        <arg name="roll" value="0"/>
+        <arg name="pitch" value="4.71"/>
+        <arg name="yaw" value="1.57"/>
+    </include>
+    <include file="$(find active_perception_evaluation)/launch/spawn_object_at_xyz.launch">
+        <arg name="model" value="race_menucard"/>
+        <arg name="model_name" value="menucard_t14"/>
+        <arg name="x" value="-4.55"/>
+        <arg name="y" value="1.67"/>
+        <arg name="z" value="0.87"/>
+        <arg name="roll" value="0"/>
+        <arg name="pitch" value="4.71"/>
+        <arg name="yaw" value="1.57"/>
+    </include>
+        
+    <!-- DECORATE COUNTER -->
+    <include file="$(find active_perception_evaluation)/launch/spawn_object_at_xyz.launch">
+        <arg name="model" value="race_menucard"/>
+        <arg name="model_name" value="menucard_322"/>
+        <arg name="x" value="-6.85"/>
+        <arg name="y" value="-0.21"/>
+        <arg name="z" value="0.87"/>
+        <arg name="roll" value="0"/>
+        <arg name="pitch" value="4.71"/>
+        <arg name="yaw" value="0"/>
+    </include>
+    <include file="$(find active_perception_evaluation)/launch/spawn_object_at_xyz.launch">
+        <arg name="model" value="race_menucard"/>
+        <arg name="model_name" value="menucard_323"/>
+        <arg name="x" value="-7"/>
+        <arg name="y" value="0.2"/>
+        <arg name="z" value="0.86"/>
+        <arg name="roll" value="0"/>
+        <arg name="pitch" value="4.71"/>
+        <arg name="yaw" value="1.57"/>
+    </include>
+    
+    <!-- DECORATE SHELF 1 -->
+    <include file="$(find active_perception_evaluation)/launch/spawn_object_at_xyz.launch">
+        <arg name="model" value="race_menucard"/>
+        <arg name="model_name" value="menucard_s11"/>
+        <arg name="x" value="-4.5"/>
+        <arg name="y" value="-0.8"/>
+        <arg name="z" value="0.94"/>
+        <arg name="roll" value="0"/>
+        <arg name="pitch" value="4.71"/>
+        <arg name="yaw" value="1.57"/>
+    </include>
+    <include file="$(find active_perception_evaluation)/launch/spawn_object_at_xyz.launch">
+        <arg name="model" value="race_menucard"/>
+        <arg name="model_name" value="menucard_s12"/>
+        <arg name="x" value="-4.9"/>
+        <arg name="y" value="-0.82"/>
+        <arg name="z" value="0.56"/>
+        <arg name="roll" value="1.57"/>
+        <arg name="pitch" value="4.71"/>
+        <arg name="yaw" value="1.57"/>
+    </include>
+    <include file="$(find active_perception_evaluation)/launch/spawn_object_at_xyz.launch">
+        <arg name="model" value="race_menucard"/>
+        <arg name="model_name" value="menucard_s13"/>
+        <arg name="x" value="-4.39"/>
+        <arg name="y" value="-0.82"/>
+        <arg name="z" value="0.18"/>
+        <arg name="roll" value="1.57"/>
+        <arg name="pitch" value="4.71"/>
+        <arg name="yaw" value="1.57"/>
+    </include>
+    
+    <!-- PERSON 1 -->
+    <include file="$(find active_perception_evaluation)/launch/spawn_object_at_xyz.launch">
+        <arg name="model" value="race_female_standing"/>
+        <arg name="model_name" value="person_1"/>
+        <arg name="x" value="-1.4"/>
+        <arg name="y" value="1.35"/>
+        <arg name="z" value="0"/>
+        <arg name="roll" value="0"/>
+        <arg name="pitch" value="0"/>
+        <arg name="yaw" value="0"/>
+    </include>
+    
+    <!-- PERSON 2 -->
+    <include file="$(find active_perception_evaluation)/launch/spawn_object_at_xyz.launch">
+        <arg name="model" value="race_female_standing"/>
+        <arg name="model_name" value="person_2"/>
+        <arg name="x" value="-6.4"/>
+        <arg name="y" value="0.3"/>
+        <arg name="z" value="0"/>
+        <arg name="roll" value="0"/>
+        <arg name="pitch" value="0"/>
+        <arg name="yaw" value="0"/>
+    </include>
+</launch>

@@ -1,0 +1,12 @@
+# Goal: A list of bounding boxes to observe, optionally along with probabilities of success for each bounding box.
+# Search terminates if the expected probability for success is below min_p_succ.
+uos_active_perception_msgs/BoundingBox[] roi
+float64[] p
+float64 min_p_succ
+---
+# Result: Amount of ROI space left unobserved [m^3]
+float64 unobserved_space
+---
+# Feedback: Amount of ROI space left unobserved and expected time until completion
+float64 unobserved_space
+float64 eta

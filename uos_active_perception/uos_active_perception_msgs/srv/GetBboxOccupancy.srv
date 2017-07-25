@@ -1,0 +1,10 @@
+# Returns absolute stats in m^3 for a given axis aligned bounding box.
+
+BoundingBox bbox
+---
+CellIds occupied
+CellIds free
+CellIds unknown
+float64 cell_volume
+CellId bbox_min
+CellId bbox_max
