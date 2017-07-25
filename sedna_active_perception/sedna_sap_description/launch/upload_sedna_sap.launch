@@ -1,0 +1,4 @@
+<?xml version="1.0"?>
+<launch>
+  <param name="robot_description" command="$(find xacro)/xacro.py '$(find sedna_active_perception)/sedna_sap_description/urdf/sedna_sap.urdf.xacro'" />
+</launch>

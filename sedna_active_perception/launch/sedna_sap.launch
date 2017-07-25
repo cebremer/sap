@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<launch>
+  <!-- build sedna urdf with xacro and push it on the ros parameter server -->
+  <include file="$(find sedna_bringup)/launch/sedna.launch" />
+  <include file="$(find sedna_active_perception)/sedna_sap_description/launch/upload_sedna_sap.launch" />
+  <!-- driver for roboter base -->
+
+
+  <!--include file="$(find sedna_bringup)/launch/ekf.launch"-->
+  <node pkg="map_server" type="map_server" name="map_server" args="/home/robot/sedna_ws/Arena.yaml"/>
+  <node pkg="amcl" type="amcl" name="amcl" args="scan:=/sick_tim/scan _odom_frame_id:=odom_combined"/>
+  <!-- xtion -->
+  <include file="./xtion.launch" />
+
+  <!-- filter chains -->
+  <!--include file="./xtion_filter_chain.launch" /-->
+</launch>
