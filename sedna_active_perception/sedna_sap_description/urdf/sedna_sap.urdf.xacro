@@ -7,9 +7,9 @@
 
 	<xacro:property name="cam_px" value="${body_length/2 - 0.1}" />
     <xacro:property name="cam_py" value="0" />
-        <xacro:property name="cam_pz" value="${body_height + 0.8}" />
+        <xacro:property name="cam_pz" value="${body_height + 0.69}" />
         <xacro:property name="cam_or" value="0" />
-        <xacro:property name="cam_op" value="0.3" />
+        <xacro:property name="cam_op" value="0.338" />
         <xacro:property name="cam_oy" value="0" />
 
 	<xacro:sensor_asus_xtion_pro  parent="base_link"/>	

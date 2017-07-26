@@ -1,5 +1,5 @@
-#ifndef TURTLEBOT_AGENT_H
-#define TURTLEBOT_AGENT_H
+#ifndef SEDNA_AGENT_H
+#define SEDNA_AGENT_H
 
 #include <tf/tf.h>
 #include <tf/transform_listener.h>
@@ -12,10 +12,10 @@
   For PR2, the camera link is simplified to allow for panning and tilting of the camera without changing the position
   relative to /base_footprint. This virtual camera link is located 0.292 m above /head_pan_link.
   */
-class TurtlebotAgent
+class SednaAgent
 {
 public:
-  TurtlebotAgent(tf::TransformListener &tf_listener, const std::string &world_frame_id);
+  SednaAgent(tf::TransformListener &tf_listener, const std::string &world_frame_id);
 
   double getAcquisitionTime() const
   {

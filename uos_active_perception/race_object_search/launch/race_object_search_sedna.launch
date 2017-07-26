@@ -1,0 +1,16 @@
+<?xml version="1.0" ?>
+<launch>
+  <arg name="sim" default="false" />
+  <arg name="map" default="race_inflated" />
+  <arg name="log_dir" default="" />
+
+  <include file="$(find race_object_search)/launch/object_search_prerequisites_sedna.launch">
+    <arg name="sim" value="$(arg sim)" />
+    <arg name="map" value="$(arg map)" />
+  </include>
+  <include file="$(find race_object_search)/launch/object_search_manager.launch">
+    <arg name="sim" value="$(arg sim)" />
+    <arg name="log_dir" value="$(arg log_dir)" />
+    <arg name="robot" value="sedna" />
+  </include>
+</launch>

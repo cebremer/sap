@@ -1,4 +1,4 @@
-#include "turtlebot_agent.h"
+#include "sedna_agent.h"
 
 #include "kmeans.h"
 
@@ -10,9 +10,9 @@
 #include <sstream>
 #include <fstream>
 
-#define TURTLEBOT_AGENT_DEBUG
+#define SEDNA_AGENT_DEBUG
 
-TurtlebotAgent::TurtlebotAgent(tf::TransformListener &tf_listener, const std::string &world_frame_id)
+SednaAgent::SednaAgent(tf::TransformListener &tf_listener, const std::string &world_frame_id)
   : m_world_frame_id(world_frame_id)
   , m_tf_listener(tf_listener)
   , m_move_base_client("move_base", true)
@@ -39,14 +39,14 @@ TurtlebotAgent::TurtlebotAgent(tf::TransformListener &tf_listener, const std::st
   m_camera_frame_id = tf::resolve(tf_prefix, m_camera_frame_id);
 }
 
-tf::Pose TurtlebotAgent::getCurrentRobotPose() const
+tf::Pose SednaAgent::getCurrentRobotPose() const
 {
   tf::StampedTransform robot_pose;
   m_tf_listener.lookupTransform(m_world_frame_id, m_base_frame_id, ros::Time(), robot_pose);
   return robot_pose;
 }
 
-tf::Pose TurtlebotAgent::getCurrentCamPose() const
+tf::Pose SednaAgent::getCurrentCamPose() const
 {
   tf::StampedTransform cam_pose;
   m_tf_listener.lookupTransform(m_world_frame_id, m_camera_frame_id, ros::Time(), cam_pose);
@@ -56,7 +56,7 @@ tf::Pose TurtlebotAgent::getCurrentCamPose() const
 /**
   Return the pose of the camera link for a given robot pose.
   */
-tf::Pose TurtlebotAgent::camPoseForRobotPose(tf::Pose const &robot_pose) const
+tf::Pose SednaAgent::camPoseForRobotPose(tf::Pose const &robot_pose) const
 {
   tf::StampedTransform base_to_camera;
   m_tf_listener.lookupTransform(m_base_frame_id, m_camera_frame_id, ros::Time(), base_to_camera);
@@ -66,14 +66,14 @@ tf::Pose TurtlebotAgent::camPoseForRobotPose(tf::Pose const &robot_pose) const
 /**
   Return the robot pose for a given camera pose.
   */
-tf::Pose TurtlebotAgent::robotPoseForCamPose(tf::Pose const &cam_pose) const
+tf::Pose SednaAgent::robotPoseForCamPose(tf::Pose const &cam_pose) const
 {
   tf::StampedTransform camera_to_base;
   m_tf_listener.lookupTransform(m_camera_frame_id, m_base_frame_id, ros::Time(), camera_to_base);
   return cam_pose * camera_to_base;
 }
 
-std::vector<double> TurtlebotAgent::estimateMoveTimes
+std::vector<double> SednaAgent::estimateMoveTimes
 (
   std::vector<tf::Pose> const &cam_poses,
   std::vector<tf::Pose> const &base_poses,
@@ -81,9 +81,9 @@ std::vector<double> TurtlebotAgent::estimateMoveTimes
   std::vector<size_t> const &target_pose_idxs,
   size_t const n_clusters) const
 {
-#ifdef TURTLEBOT_AGENT_DEBUG
+#ifdef SEDNA_AGENT_DEBUG
   // Prepare debug marker publisher
-  ros::Publisher dbg_marker_pub(ros::NodeHandle().advertise<visualization_msgs::Marker>("turtlebot_agent_dbg", 10000));
+  ros::Publisher dbg_marker_pub(ros::NodeHandle().advertise<visualization_msgs::Marker>("sedna_agent_dbg", 10000));
   ros::WallDuration(5.0).sleep();
 #endif
 
@@ -104,7 +104,7 @@ std::vector<double> TurtlebotAgent::estimateMoveTimes
   }
   ROS_INFO_STREAM("k-means completed with max_remote_distance=" << km.getMaxRemoteDistance());
 
-#ifdef TURTLEBOT_AGENT_DEBUG
+#ifdef SEDNA_AGENT_DEBUG
   // Publish cluster centers
   visualization_msgs::Marker clusters_marker;
   clusters_marker.action = visualization_msgs::Marker::ADD;
@@ -185,7 +185,7 @@ std::vector<double> TurtlebotAgent::estimateMoveTimes
     return times;
   }
 
-#ifdef TURTLEBOT_AGENT_DEBUG
+#ifdef SEDNA_AGENT_DEBUG
   // Publish all paths as markers
   for (size_t i = 0; i < start_pose_idxs.size(); ++i)
   {
@@ -253,7 +253,7 @@ std::vector<double> TurtlebotAgent::estimateMoveTimes
   return times;
 }
 
-bool TurtlebotAgent::achieveCamPose
+bool SednaAgent::achieveCamPose
 (
   tf::Pose const &target_cam_pose,
   double const target_distance)

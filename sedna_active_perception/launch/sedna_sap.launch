@@ -7,10 +7,11 @@
 
 
   <!--include file="$(find sedna_bringup)/launch/ekf.launch"-->
-  <node pkg="map_server" type="map_server" name="map_server" args="/home/robot/sedna_ws/Arena.yaml"/>
-  <node pkg="amcl" type="amcl" name="amcl" args="scan:=/sick_tim/scan _odom_frame_id:=odom_combined"/>
+  <node pkg="map_server" type="map_server" name="map_server" args="/home/robot/sedna_ws/Arena.yaml">
+  </node>
+  <node pkg="amcl" type="amcl" name="amcl" args="scan:=/sick_tim/scan _odom_frame_id:=odom_combined _base_frame_id:=base_footprint" output="screen"/>
   <!-- xtion -->
-  <include file="./xtion.launch" />
+  <include file="$(find sedna_active_perception)/launch/xtion.launch" />
 
   <!-- filter chains -->
   <!--include file="./xtion_filter_chain.launch" /-->
