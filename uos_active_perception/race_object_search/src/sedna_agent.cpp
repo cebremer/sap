@@ -30,7 +30,7 @@ SednaAgent::SednaAgent(tf::TransformListener &tf_listener, const std::string &wo
   nh_priv.param("additional_acquisition_time", m_additional_acquisition_time, 5.0);
 
   nh_priv.param("base_frame_id",   m_base_frame_id,   std::string("base_footprint"));
-  nh_priv.param("camera_frame_id", m_camera_frame_id, std::string("camera_depth_frame"));
+  nh_priv.param("camera_frame_id", m_camera_frame_id, std::string("camera_rgb_frame"));
 
   // resolve TF prefixes
   std::string tf_prefix(tf::getPrefixParam(nh_priv));

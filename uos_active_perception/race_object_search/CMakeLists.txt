@@ -62,7 +62,8 @@ add_executable(object_search_manager src/floating_kinect_agent.cpp
                                      src/pr2_agent.cpp
                                      src/ros_serialization_helper.h
                                      src/search_plan.h
-                                     src/search_planner.h)
+                                     src/search_planner.h
+					src/sedna_agent.cpp)
 add_dependencies(object_search_manager ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 target_link_libraries(object_search_manager
   ${catkin_LIBRARIES}
