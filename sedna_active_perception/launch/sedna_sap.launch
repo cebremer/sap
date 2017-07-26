@@ -7,7 +7,7 @@
 
 
   <!--include file="$(find sedna_bringup)/launch/ekf.launch"-->
-  <node pkg="map_server" type="map_server" name="map_server" args="/home/robot/sedna_ws/Arena.yaml">
+  <node pkg="map_server" type="map_server" name="map_server" args="$(find sedna_active_perception)/nav/Arena.yaml">
   </node>
   <node pkg="amcl" type="amcl" name="amcl" args="scan:=/sick_tim/scan _odom_frame_id:=odom_combined _base_frame_id:=base_footprint" output="screen"/>
   <!-- xtion -->
