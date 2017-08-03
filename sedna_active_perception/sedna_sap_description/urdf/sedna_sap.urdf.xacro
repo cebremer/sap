@@ -7,8 +7,8 @@
 
 	<xacro:property name="cam_px" value="${body_length/2 - 0.01}" />
     <xacro:property name="cam_py" value="0.02" />
-        <xacro:property name="cam_pz" value="${body_height + 0.69}" />
-        <xacro:property name="cam_or" value="0.03" />
+        <xacro:property name="cam_pz" value="${body_height + 0.66}" />
+        <xacro:property name="cam_or" value="0.0" />
         <xacro:property name="cam_op" value="0.339" />
         <xacro:property name="cam_oy" value="0" />
 
