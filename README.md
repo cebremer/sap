@@ -10,7 +10,8 @@ This is a modified version of the uos_active_perception stack which is now compa
 It also contains additional launch files to start race_object_search on the Sedna Robot.
 
 ## Build
-This package depends on ROS-kinetic, uos_tools and the [sedna_robot](https://github.com/cebremer/sedna_robot "GitHub:sedna_robot Repo") repository.
+This package depends on ROS-kinetic, uos_tools,ROS-openni and the [sedna_robot](https://github.com/cebremer/sedna_robot "GitHub:sedna_robot Repo") repository.
+
 ## Execution
 To run the Sedna Robot with Kinect, map_server and amcl:
 ```
